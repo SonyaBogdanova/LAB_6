@@ -52,7 +52,32 @@ def p2():
         s += alphabet[i]
     print('Ценность слова = ', s)
 
-p1(), p2()
+def p3():
+    import random
+
+    students = {"Иванова", "Козлов", "Щеглова", "Романов", "Петрова", "Кузнецов", "Киселёв", "Давыдова", "Лебедев",
+                "Семенова"}
+    languages = {"Русский", "Английский", "Французский", "Немецкий", "Китайский"}
+
+    lang_stud = {}
+
+    for st in students:
+        kolvo = random.randint(1, 3)
+        lang_stud[st] = random.sample(list(languages), kolvo)
+
+    unique_lang = set()
+    for i in lang_stud:
+        unique_lang = unique_lang.union(set(lang_stud[i]))
+    sorted(unique_lang)
+    unique_lang_fix = ', '.join(unique_lang)
+    # print(lang_stud)
+    print("Множество различных языков, которые знают студенты: ", unique_lang_fix, f" ({len(unique_lang)})")
+
+    china = [i for i in lang_stud if "Китайский" in lang_stud[i]]
+    china_fix = ', '.join(china)
+    print("Студенты, знающие китайский: ", china_fix)
+
+p3()
 
 
 
