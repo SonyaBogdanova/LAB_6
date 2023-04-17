@@ -77,7 +77,7 @@ def p3():
     china_fix = ', '.join(china)
     print("Студенты, знающие китайский: ", china_fix)
 
-p3()
+p1(), p2(), p3()
 
 
 
